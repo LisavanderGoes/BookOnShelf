@@ -1,0 +1,117 @@
+body {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: Verdana, Tahoma, Arial, Helvetica;
+    font-size: medium;
+    color: saddlebrown;
+    //background: #EBF5FF;
+    text-align: left;
+
+    background: url('../images/bieb.jpg')  right top;
+    background-repeat: repeat-y;
+    background-size: 100%;
+
+}
+h1 {
+    padding: 7px;
+    text-align: center;
+    color: white;
+    font-size: 26px;
+    background: saddlebrown;
+}
+h3 {
+    padding: 4px;
+    color: saddlebrown;
+    font-size: 15px;
+    font-style: italic;
+    background: transparent;
+}
+p {
+    text-align: justify;
+    color: #555555;
+}
+
+
+/* Hyperlinks and behavior */
+a {
+    font-size: small;
+    color: #333333;
+}
+
+/* Layout and position */
+
+#layout {
+    width: 755px;
+    /* center layout */
+    margin-left: auto ;
+    margin-right: auto ;
+    background-color: rgba(248, 247, 216, 0.7);
+
+}
+
+/* header */
+#header {
+    background: transparent;
+    padding: 10px;
+}
+
+/* content */
+#content {
+    background: transparent;
+    padding: 0px 10px 10px 10px;
+}
+
+/* footer */
+#footer {
+    background: rosybrown;
+    padding: 10px;
+}
+
+/* navigation bar */
+#menu {
+    background: saddlebrown;
+    height: 27px;
+    text-align: right;
+}
+#menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#menu ul li {
+    background: saddlebrown;
+    border-style: none solid none none;
+    border-width: 1px;
+    border-color: white;
+
+    float: left;
+    height: 27px;
+    width: auto;
+
+    text-align: center;
+}
+#menu ul li:hover {
+    background-color: rosybrown;
+}
+
+#menu a {
+    font-size: small;
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#menu ul li a {
+    width: 100px;
+    height: 27px;
+    background/color± white;
+}
+
+#current_page {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+
+
+

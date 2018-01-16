@@ -1,0 +1,24 @@
+opdracht:
+thuis kijken wat je geleend hb
+meteen inloggen:
+	username & password
+lijst met boeken en daar knop met lenen (geen barcode)
+(c) zoekfunctie
+standaard leentermijn 4 weken (melding)
+user kan terugbrengen ???? kan
+
+
+registratie pagina + ww reset
+admin mag met leden(alleen ww reseten)
+
+dashboard:
+	admin boek auteurs leden laatste 5 leden die ze hebben aangemeld
+	leden boeken open en geleend(laaste 5) teruggebracht
+
+
+reserveren as het kan
+
+
+M:
+login
+crut create, read, update, delete >>>> boeken, schrijvers, leden

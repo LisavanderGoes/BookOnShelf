@@ -1,0 +1,19 @@
+<?php
+
+session_start();
+
+if(isset($_POST['submit'])){
+
+    $user = $_POST['username'];
+    $pass = $_POST['password'];
+
+
+    if(($user == 'user1') && ($pass == 'password1')){
+        echo "welkom";
+    }
+    else{
+        echo "Niet geldig!";
+    }
+
+}
+?>
