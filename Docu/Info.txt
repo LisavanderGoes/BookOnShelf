@@ -1,0 +1,27 @@
+in boekonshelf map:
+docu map
+img map
+css map
+include map
++ index.php
+
+in pages alleen html geen php wel .inc.php
+
+
+login met form
+
+info controleren met een php bestandmet php erin
+
+action='php/login.php' [met hardcode]
+
+opgebouwd uit: 
+-input/ opbouw view ...... index.php
+-view..................... ?.inc.php <alleen html>
+-verwerking/ output....... login.php
+
+
+
+Bestanden:
+-Leden
+-Boeken(in de boekenkast)
+-Boeken(uitgeleend)
