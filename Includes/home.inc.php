@@ -1,6 +1,4 @@
 
-
-<!-- content -->
 <div id="content">
 
     <h3>
@@ -13,6 +11,6 @@
 </p>
 
     <br />
-</div> <!-- end content -->
+</div>
 
 

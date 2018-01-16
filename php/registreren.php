@@ -6,10 +6,9 @@ if(isset($_POST['submit'])){
         'username2' => 'password2',
         'lisa' => 'ww');
 
-    $message = "WRONG!";
-
     $Username = isset($_POST['username']) ? $_POST['username'] : '';
     $Password = isset($_POST['password']) ? $_POST['password'] : '';
+    $Password2 = isset($_POST['password2']) ? $_POST['password2'] : '';
 
     if (isset($logins[$Username]) && $logins[$Username] == $Password){
         $_SESSION['UserData']['Username']=$logins[$Username];
