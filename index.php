@@ -21,7 +21,7 @@ if (isset($_GET['page'])){
 <div id="layout">
 
     <div id="header">
-        <h1>BoekOnShelf</h1>
+        <h1>BoekOpPlank</h1>
     </div>
 
 <!-----menu---->

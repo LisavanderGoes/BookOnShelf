@@ -17,3 +17,52 @@ if(isset($_POST['submit'])){
 
 }
 ?>
+
+
+===================================================================
+<?php session_start();
+
+if(isset($_POST['Submit'])){
+    $logins = array('Alex' => '123456',
+        'username1' => 'password1',
+        'username2' => 'password2',
+        'lisa' => 'ww');
+
+    $Username = isset($_POST['Username']) ? $_POST['Username'] : '';
+    $Password = isset($_POST['Password']) ? $_POST['Password'] : '';
+
+    if (isset($logins[$Username]) && $logins[$Username] == $Password){
+        $_SESSION['UserData']['Username']=$logins[$Username];
+        //header("location:index.php");
+        echo 'hallo';
+        exit;
+    } else {
+        //$msg="<span style='color:red'>Invalid Login Details</span>";
+        echo 'nop';
+    }
+}
+
+
+
+
+?>
+
+====================================================================
+ /*
+if ($row['username'] == $username && $row['password'] == $password){
+    echo "Login success";
+} else{
+    echo "WRONG!!!!!";
+}
+
+   /* if (isset($logins[$Username]) && $logins[$Username] == $Password){
+        $_SESSION['UserData']['Username']=$logins[$Username];
+        header("Location:../index.php");
+        exit;
+    } else {
+        header("Location:start.php");
+        /*echo "<script> alert(\"Wrong Username or Password\");
+location=\"start.php\"; </script>";
+    }*/
+
+

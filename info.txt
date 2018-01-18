@@ -22,3 +22,14 @@ reserveren as het kan
 M:
 login
 crut create, read, update, delete >>>> boeken, schrijvers, leden
+
+
+bij postconditie moet je ook status van actor zetten....
+
+ww met ww hash voor admin
+
+
+files:
+leden
+boeken
+beoeken geleend
