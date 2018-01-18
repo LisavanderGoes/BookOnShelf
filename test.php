@@ -14,7 +14,7 @@ if (isset($_GET['page'])){
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>BoekOnShelf</title>
     <link rel="icon" href="images/icon.png" />
-    <link href="css/stijl.css" rel="stylesheet" type="text/css" />
+    <link href="css/test.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -24,15 +24,15 @@ if (isset($_GET['page'])){
         <h1>BoekOpPlank</h1>
     </div>
 
-<!-----menu---->
+    <!-----menu---->
     <?php include 'Includes/navbar.inc.php'; ?>
 
 
-<!-----page----->
+    <!-----page----->
     <?php include 'Includes/'.$page.'.inc.php'; ?>
 
 
-<!-----footer----->
+    <!-----footer----->
     <div id="footer">
         <em>BoekOnShelf</em>
     </div>

@@ -18,9 +18,9 @@ if (isset($_GET['page'])){
 </head>
 
 <body>
-<div id="layout">
+<div id="container">
 
-    <div id="header">
+    <div id="banner">
         <h1>WELKOM</h1>
     </div>
 

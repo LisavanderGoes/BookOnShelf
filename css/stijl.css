@@ -1,10 +1,9 @@
 body {
     margin-top: 20px;
     margin-bottom: 20px;
-    font-family: Verdana, Tahoma, Arial, Helvetica;
-    font-size: medium;
+    font-family: Verdana;
+    font-size: 15px;
     color: saddlebrown;
-    //background: #EBF5FF;
     text-align: left;
 
     background: url('../images/bieb.jpg')  right top;
@@ -12,6 +11,48 @@ body {
     background-size: 100%;
 
 }
+
+/*navbar*/
+#menu {
+    background: saddlebrown;
+    height: 27px;
+    text-align: right;
+}
+#menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#menu ul li {
+    /*box*/
+    float: left;
+    height: 27px;
+    width: auto;
+    background: saddlebrown;
+    /*white stripe*/
+    border-style: none solid none none;
+    border-width: 1px;
+    border-color: white;
+
+    text-align: center;
+}
+#menu ul li:hover {
+    background-color: rosybrown;
+}
+
+#menu a {
+    font-size: 13px;
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#menu ul li a {
+    width: 100px;
+    height: 27px;
+}
+
+/*text*/
 h1 {
     padding: 7px;
     text-align: center;
@@ -32,15 +73,15 @@ p {
 }
 
 
-/* Hyperlinks and behavior */
+/*links*/
 a {
-    font-size: small;
+    font-size: 13px;
     color: #333333;
 }
 
-/* Layout and position */
 
-#layout {
+/*layout*/
+#container {
     width: 755px;
     /* center layout */
     margin-left: auto ;
@@ -49,9 +90,7 @@ a {
 
 }
 
-/* header */
-#header {
-    background: transparent;
+#banner {  /*in banner zit een h1*/
     padding: 10px;
 }
 
@@ -61,56 +100,11 @@ a {
     padding: 0px 10px 10px 10px;
 }
 
-/* footer */
 #footer {
     background: rosybrown;
     padding: 10px;
 }
 
-/* navigation bar */
-#menu {
-    background: saddlebrown;
-    height: 27px;
-    text-align: right;
-}
-#menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-#menu ul li {
-    background: saddlebrown;
-    border-style: none solid none none;
-    border-width: 1px;
-    border-color: white;
-
-    float: left;
-    height: 27px;
-    width: auto;
-
-    text-align: center;
-}
-#menu ul li:hover {
-    background-color: rosybrown;
-}
-
-#menu a {
-    font-size: small;
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-#menu ul li a {
-    width: 100px;
-    height: 27px;
-    background/color± white;
-}
-
-#current_page {
-    color: #FFFFFF;
-    text-decoration: underline;
-}
 
 
 

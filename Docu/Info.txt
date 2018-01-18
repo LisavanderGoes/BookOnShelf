@@ -25,3 +25,5 @@ Bestanden:
 -Leden
 -Boeken(in de boekenkast)
 -Boeken(uitgeleend)
+-Boeken(history)
+-Boeken(reserveren)
