@@ -12,9 +12,9 @@
     </p>
     <p>
         <label>
-            <input type="password" name="password2" id="password" placeholder="Wachtwoord(2e x)...">
+            <input type="password" name="2" id="password2" placeholder="Wachtwoord(2e x)...">
         </label>
     </p>
 
-    <input type="submit" value="Registreren" name="submit">
+    <input class="button" type="submit" value="Registreren" name="submit">
 </form>

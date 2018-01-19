@@ -1,22 +1,34 @@
 <?php session_start();
 
 if(isset($_POST['submit'])){
-    $logins = array('Alex' => '123456',
-        'username1' => 'password1',
-        'username2' => 'password2',
-        'lisa' => 'ww');
 
-    $Username = isset($_POST['username']) ? $_POST['username'] : '';
-    $Password = isset($_POST['password']) ? $_POST['password'] : '';
-    $Password2 = isset($_POST['password2']) ? $_POST['password2'] : '';
+    //Database
+    include_once "../db/connect.php";
 
-    if (isset($logins[$Username]) && $logins[$Username] == $Password){
-        $_SESSION['UserData']['Username']=$logins[$Username];
-        header("Location:../index.php");
+    //Get values from registreren.inc.php
+    $username = isset($_POST['username']) ? $_POST['username'] : '';
+    $password = isset($_POST['password']) ? $_POST['password'] : '';
+    $password2 = isset($_POST['2']) ? $_POST['2'] : '';
+
+    if(($username == "" || $password == "") || ($password != $password2)){
+        header("Location:start.php?page=registreren");
         exit;
     } else {
-        header("Location:start.php");
 
+        //Add new records
+        $sql = "INSERT INTO users (username, password)
+                  VALUES ('$username', '$password')";
+
+
+        if ($db->query($sql) === TRUE) {
+            header("Location:../index.php");
+            exit;
+        } else {
+            echo "Error: " . $sql . "<br>" . $db->error;
+        }
+
+
+        $db->close();
     }
 }
 ?>

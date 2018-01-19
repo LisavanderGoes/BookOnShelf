@@ -11,7 +11,7 @@
         </label>
     </p>
 
-    <input type="submit" value="Login" name="submit">
+    <input class="button" type="submit" value="Login" name="submit">
 </form>
 
 

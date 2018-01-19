@@ -16,19 +16,20 @@ $password = mysqli_real_escape_string($db, $password);
 
 // Query database for user
 $result = mysqli_query($db, "SELECT * FROM users WHERE username = '$username' AND password = '$password'")
-            or die("Failed to query database");
+            or die("Failed to query database:". $db->error);
 $row = mysqli_fetch_array($result);
 
 
-
 //Login
-    if (($_POST['username'] == "" || $_POST['password'] == "") || ($row['username'] != $username && $row['password'] != $password)){
+    if (($username == "" || $password == "") || ($row['username'] != $username && $row['password'] != $password)){
         header("Location:start.php");
         exit;
     } else{
         header("Location:../index.php");
         exit;
     }
+
+    $db->close();
 
 }
 ?>
