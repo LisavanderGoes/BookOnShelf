@@ -8,28 +8,24 @@ $password = isset($_POST['password']) ? $_POST['password'] : '';
 //Database
 include_once "../db/connect.php";
 
-//to prevent mysql injection
-$username = stripcslashes($username);
-$password = stripcslashes($password);
-$username = mysqli_real_escape_string($db, $username);
-$password = mysqli_real_escape_string($db, $password);
+//Query database
+$result = $db->prepare("SELECT * FROM users WHERE username =? AND password =? ");
+$result->execute(array($username, $password));
+$row = $result->fetch();
 
-// Query database for user
-$result = mysqli_query($db, "SELECT * FROM users WHERE username = '$username' AND password = '$password'")
-            or die("Failed to query database:". $db->error);
-$row = mysqli_fetch_array($result);
-
-
-//Login
+    //Login
     if (($username == "" || $password == "") || ($row['username'] != $username && $row['password'] != $password)){
         header("Location:start.php");
         exit;
     } else{
-        header("Location:../index.php");
-        exit;
+        if($row['status'] == 'b') {
+            echo "admin mode coming soon!";
+        } else {
+            header("Location:../index.php");
+            exit;
+        }
     }
 
-    $db->close();
-
 }
+
 ?>

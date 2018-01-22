@@ -86,11 +86,35 @@ p{
     text-align: justify;
 }
 
+#boek{
+    color: #666666;
+    text-align: justify;
+    text-decoration: none;
+}
+
+#lenen{
+    float: right;
+    width: 200px;
+    color:white;
+    background-color: brown;
+}
+
 #footer{
     background: rosybrown;
     padding: 13px;
 }
 
+#row{
+
+    border-style: solid none solid none;
+    border-width: 1.5px;
+    border-color: saddlebrown;
+}
+
+#lenen{
+    float: right;
+    margin: 0px 0px 10px 10px;
+}
 
 
 

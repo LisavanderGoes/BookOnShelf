@@ -64,5 +64,75 @@ if ($row['username'] == $username && $row['password'] == $password){
         /*echo "<script> alert(\"Wrong Username or Password\");
 location=\"start.php\"; </script>";
     }*/
+===================================================================
+<div id="content">
+
+    <h3>
+        Boeken
+    </h3>
+    <br />
+
+    <?php
+    foreach($db->query('SELECT * from boeken') as $row) : ?>
+        <div id="row">
+            <form name="login" method="post" >
+
+
+                <input id="lenen" class="button" type="submit" value="Lenen" name="submit">
+
+                <?php
+                if(isset($_POST['submit'])){
+                    echo $row['name'];
+                }
+                ?>
+
+            <p>
+                <label>
+                Boek: <?php echo $row['name']?>
+                </label>
+            </p>
+            <p>
+                <label>
+                Auteur: <?php echo $row['writer']?>
+                </label>
+            </p>
+            <p>
+                <label>
+                Aantal: <?php echo $row['aantal']?>
+                </label>
+            </p>
+
+
+        </form>
+        </div>
+
+    <?php endforeach;?>
+
+
+</div>
+
+
+
+
+============================================================
+
+<?php
+$product_array = $db->Query("SELECT * FROM boeken ORDER BY id ASC");
+if (!empty($product_array)) {
+    foreach($product_array as $key=>$value){
+        echo 'hallo';
+        ?>
+        <div class="product-item">
+            <form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
+                <div>
+                    <strong><?php echo $product_array[$key]["name"]; ?></strong>
+                </div>
+                <div class="product-price">
+                    <?php echo "$".$product_array[$key]["writer"]; ?>
+                </div>
+                <div><input type="text" name="quantity" value="1" size="2" /><input type="submit" value="Add to cart" class="btnAddAction" /></div>
+            </form>
+        </div>
+    <?php }} ?>
 
 

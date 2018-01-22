@@ -7,7 +7,16 @@ $pass = '';
 $db = 'boekonshelf';
 
 //connect to server and select database
-$db = new mysqli($servername, $user, $pass, $db)
-        or die("Unable to connect");
+try {
+$db = new PDO('mysql:host='.$servername.';dbname='.$db.';charset=utf8mb4',
+    $user, $pass, array(
+        PDO::ATTR_PERSISTENT => true
+    ));
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch(PDOException $e)
+{
+    echo "Connection failed: " . $e->getMessage();
+}
 
 ?>
