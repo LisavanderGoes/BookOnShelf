@@ -18,7 +18,7 @@ $row = $result->fetch();
         header("Location:start.php");
         exit;
     } else{
-        if($row['status'] == 'b') {
+        if($row['status'] == 'admin') {
             echo "admin mode coming soon!";
         } else {
             header("Location:../index.php");

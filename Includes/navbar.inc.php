@@ -3,7 +3,7 @@ $menuItems = array(
     array('home', 'Home'),
     array('boeken', 'Boeken'),
     array('terug', 'Inleveren'),
-    array('reset', 'Wachtwoord wijzigen')
+    array('account', 'Account')
 );
 
 ?>

@@ -92,13 +92,6 @@ p{
     text-decoration: none;
 }
 
-#lenen{
-    float: right;
-    width: 200px;
-    color:white;
-    background-color: brown;
-}
-
 #footer{
     background: rosybrown;
     padding: 13px;
@@ -106,7 +99,7 @@ p{
 
 #row{
 
-    border-style: solid none solid none;
+    border-style: none none solid none;
     border-width: 1.5px;
     border-color: saddlebrown;
 }
@@ -115,6 +108,7 @@ p{
     float: right;
     margin: 0px 0px 10px 10px;
 }
+
 
 
 

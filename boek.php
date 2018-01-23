@@ -1,7 +1,6 @@
 <?php
 session_start();
-require "../db/connect.php";
-//require "item.php";
+require "db/connect.php";
 $result = $db->query('SELECT * FROM boeken WHERE id='.$_GET['id']);
 $product = $result->fetch();
 
@@ -33,7 +32,7 @@ if(isset($_GET['id'])) {
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>BoekOnShelf</title>
     <link rel="icon" href="images/icon.png" />
-    <link href="../css/stijl.css" rel="stylesheet" type="text/css" />
+    <link href="css/stijl.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -44,7 +43,7 @@ if(isset($_GET['id'])) {
     </div>
 
     <!-----menu---->
-    <?php include '../Includes/navbar.inc.php'; ?>
+    <?php include 'Includes/navbar.inc.php'; ?>
 
 
     <!-----page---->
@@ -54,7 +53,7 @@ if(isset($_GET['id'])) {
             <?php echo $item->name; ?>
         </h3>
 
-        <form name="lenen" method="post" action="lenen.php" >
+        <form name="lenen" method="post" action="php/lenen.php?id=<?php echo $product['id']; ?>" >
 
         <input id="lenen" class="button" type="submit" value="Lenen" name="submit">
 
@@ -71,7 +70,13 @@ if(isset($_GET['id'])) {
 
         <p>
             <label>
-            Beschrijving: <br/><?php echo $item->beschrijving;?>
+            Beschrijving: <br/><?php
+                if($product['beschrijving'] != ''){
+                echo $item->beschrijving;
+                } else{
+                    echo 'Geen beschrijving beschikbaar!';
+                }
+                ?>
             </label>
         </p>
 
@@ -91,10 +96,4 @@ if(isset($_GET['id'])) {
 </html>
 
 
-
-<?php
-        $boek = unserialize(serialize($_SESSION['boek']));
-
-
-    ?>
 

@@ -17,7 +17,7 @@ if(isset($_POST['submit'])){
     } else {
 
         //Exec database
-        $sql = $db->exec("INSERT INTO users (username, password)
+        $db->exec("INSERT INTO users (username, password)
                   VALUES ('$username', '$password')");
         header("Location:../index.php");
 
