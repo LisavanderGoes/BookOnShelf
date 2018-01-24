@@ -1,12 +1,16 @@
-<?php session_start();
+<?php
+include_once "../db/connect.php";
+
+//check if already logged in move to home page
+//if( $user->is_logged_in() ){ header('Location: index.php'); exit(); }
+
 if(isset($_POST['submit'])){
 
 //Get values from login.inc.php
 $username = isset($_POST['username']) ? $_POST['username'] : '';
 $password = isset($_POST['password']) ? $_POST['password'] : '';
 
-//Database
-include_once "../db/connect.php";
+
 
 //Query database
 $result = $db->prepare("SELECT * FROM users WHERE username =? AND password =? ");
@@ -19,8 +23,11 @@ $row = $result->fetch();
         exit;
     } else{
         if($row['status'] == 'admin') {
+            $_SESSION['username'] = $username;
             echo "admin mode coming soon!";
         } else {
+            $_SESSION['username'] = $username;
+            $_SESSION['loggedin'] = true;
             header("Location:dashboard.php");
             exit;
         }

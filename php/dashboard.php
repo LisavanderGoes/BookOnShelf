@@ -6,6 +6,11 @@ if (isset($_GET['page'])){
 }
 ?>
 
+<?php require('../db/config.php');
+//if not logged in redirect to login page
+if(!$user->is_logged_in()){ header('Location: ../index.php'); exit(); }
+?>
+
 <!DOCTYPE html PUBLIC>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="nl" lang="nl">

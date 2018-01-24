@@ -28,7 +28,7 @@ if (isset($_GET['page'])){
 
 
 <!----page--->
-    <div id="content">
+    <div>
     <img id="circle" src="images/icon005.png" alt="Icon" height="400" width="400">
     <?php include 'includes/'.$page.'.inc.php'; ?>
     </div>

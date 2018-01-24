@@ -1,8 +1,8 @@
-<?php session_start();
+<?php
 if(isset($_POST['submit'])){
 
 //Database
-    include_once "../db/connect.php";
+    include_once "../db/config.php";
 
 //Query database
     $result = $db->query('SELECT * FROM boeken WHERE id='.$_GET['id']);

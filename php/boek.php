@@ -1,25 +1,14 @@
 <?php
-session_start();
-require "../db/connect.php";
+require "../db/config.php";
 $result = $db->query('SELECT * FROM boeken WHERE id='.$_GET['id']);
 $product = $result->fetch();
 
-class Item{
-    var $id;
-    var $name;
-    var $writer;
-    var $aantal;
-    var $beschrijving;
-}
-
 if(isset($_GET['id'])) {
-    $item = new Item();
-    $item->id = $product['id'];
-    $item->name = $product['name'];
-    $item->writer = $product['writer'];
-    $item->aantal = $product['aantal'];
-    $item->beschrijving = $product['beschrijving'];
-    $_SESSION['boek'][] = $item;
+    $id = $product['id'];
+    $name = $product['name'];
+    $writer = $product['writer'];
+    $aantal = $product['aantal'];
+    $beschrijving = $product['beschrijving'];
 }
 ?>
 
@@ -41,7 +30,7 @@ if(isset($_GET['id'])) {
     <div id="banner">
         <?php include '../includes/navbar.inc.php'; ?>
         <img src="../images/icon005.png" alt="Icon" height="55" width="55">
-        <h1><?php echo $item->name ?></h1>
+        <h1><?php echo $name ?></h1>
     </div>
 
 
@@ -56,19 +45,19 @@ if(isset($_GET['id'])) {
 
         <p>
             <label>
-                Auteur: <?php echo $item->writer?>
+                Auteur: <?php echo $writer?>
             </label>
         </p>
         <p>
             <label>
-                Aantal: <?php echo $item->aantal?>
+                Aantal: <?php echo $aantal?>
             </label>
 
         <p>
             <label>
             Beschrijving: <br/><?php
                 if($product['beschrijving'] != ''){
-                echo $item->beschrijving;
+                echo $beschrijving;
                 } else{
                     echo 'Geen beschrijving beschikbaar!';
                 }

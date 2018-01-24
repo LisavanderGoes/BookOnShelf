@@ -1,19 +1,30 @@
-<form id="login" name="login" method="post" action="php/login.php" >
+<form id="login" role="form" method="post" action="php/login.php" autocomplete="off">
     <div id="box">
-    <p>
+        <p>
+    <label>
+        <input type="text" name="username" id="username" placeholder="User Name" value="<?php if(isset($error)){ echo $_POST['username']; } ?>" tabindex="1">
+    </label>
+        </p>
+        <p>
 
-        <label>
-            <input type="text" name="username" id="username" placeholder="Naam...">
-        </label>
-    </p>
-    <p>
-        <label>
-            <input type="password" name="password" id="password" placeholder="Wachtwoord...">
-        </label>
-    </p>
-    <p>
-    <input class="button" type="submit" value="Login" name="submit">
-    </p>
+    <label>
+        <input type="password" name="password" id="password" placeholder="Password" tabindex="3">
+    </label>
+        </p>
+
+
+    <div>
+        <div>
+            <a href='reset.php'>Forgot your Password?</a>
+        </div>
+    </div>
+
+    <hr>
+        <p>
+    <label>
+        <div><input type="submit" name="submit" value="Login" tabindex="5"></div>
+    </label>
+        </p>
     </div>
 </form>
 

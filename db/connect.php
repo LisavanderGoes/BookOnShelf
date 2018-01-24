@@ -1,4 +1,6 @@
 <?php
+ob_start();
+session_start();
 
 // vars for database
 $servername = 'localhost';
@@ -9,6 +11,8 @@ $db = 'boekonshelf';
 //connect to server and select database
 try {
 $db = new PDO('mysql:host='.$servername.';dbname='.$db.';charset=utf8mb4',
+
+
     $user, $pass, array(
         PDO::ATTR_PERSISTENT => true
     ));
