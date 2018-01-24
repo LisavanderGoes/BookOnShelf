@@ -2,7 +2,7 @@
 if (isset($_GET['page'])){
     $page = $_GET['page'];
 }else {
-    $page='login';
+    $page='home';
 }
 ?>
 
@@ -14,26 +14,26 @@ if (isset($_GET['page'])){
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>BoekOnShelf</title>
     <link rel="icon" href="../images/icon.png" />
-    <link href="../css/stijl.css" rel="stylesheet" type="text/css" />
+    <link href="../css/stijl2.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 <div id="container">
 
     <div id="banner">
-        <h1>WELKOM</h1>
+        <?php include '../includes/navbar.inc.php'; ?>
+        <img src="../images/icon005.png" alt="Icon" height="55" width="55">
+        <h1><?php echo $page ?></h1>
     </div>
 
-<!---Menu---->
-    <?php include '../Includes/navbar_login.inc.php'; ?>
+
+<!-----page----->
+    <div id="content">
+    <?php include '../includes/'.$page.'.inc.php'; ?>
+    </div>
 
 
-<!----page--->
-    <?php include '../Includes/'.$page.'.inc.php'; ?>
-
-
-
-<!-------footer---->
+<!-----footer----->
     <div id="footer">
         <em>BoekOnShelf</em>
     </div>

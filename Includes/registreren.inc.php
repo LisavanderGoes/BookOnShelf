@@ -1,6 +1,7 @@
-<h3>Registreren</h3>
-<form name="login" method="post" action="../php/registreren.php">
+<form id="login" name="login" method="post" action="php/registreren.php">
+    <div id="box">
     <p>
+
         <label>
             <input type="text" name="username" id="username" placeholder="Naam...">
         </label>
@@ -15,6 +16,6 @@
             <input type="password" name="2" id="password2" placeholder="Wachtwoord(2e x)...">
         </label>
     </p>
-
+    </div>
     <input class="button" type="submit" value="Registreren" name="submit">
 </form>

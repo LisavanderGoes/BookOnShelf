@@ -12,14 +12,14 @@ if(isset($_POST['submit'])){
 
 
     if(($username == "" || $password == "") || ($password != $password2)){
-        header("Location:start.php?page=registreren");
+        header("Location:../index.php?page=registreren");
         exit;
     } else {
 
         //Exec database
         $db->exec("INSERT INTO users (username, password)
                   VALUES ('$username', '$password')");
-        header("Location:../index.php");
+        header("Location:dashboard.php");
 
     }
 }

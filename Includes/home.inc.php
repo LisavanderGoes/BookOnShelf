@@ -1,9 +1,4 @@
 
-<div id="content">
-
-    <h3>
-        Home
-    </h3>
     <br />
 
 <p>
@@ -11,6 +6,6 @@
 </p>
 
     <br />
-</div>
+
 
 

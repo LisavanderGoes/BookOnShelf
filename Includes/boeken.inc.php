@@ -1,7 +1,7 @@
 <?php
 
 //Database
-    require "db/connect.php";
+    require "../db/connect.php";
 
 $result = $db->query('SELECT * FROM boeken');
 ?>
@@ -13,7 +13,7 @@ $result = $db->query('SELECT * FROM boeken');
 
         <p>
             <label>
-                <a id="boek" href="boek.php?id=<?php echo $product['id']; ?>">Boek: <?php echo $product['name']?></a>
+                <a id="boek" href="../php/boek.php?id=<?php echo $product['id']; ?>">Boek: <?php echo $product['name']?></a>
             </label>
         </p>
         <p>

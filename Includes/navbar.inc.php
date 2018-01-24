@@ -1,9 +1,9 @@
 <?php
 $menuItems = array(
-    array('home', 'Home'),
+    array('account', 'Account'),
+    array('inleveren', 'Inleveren'),
     array('boeken', 'Boeken'),
-    array('terug', 'Inleveren'),
-    array('account', 'Account')
+    array('home', 'Home')
 );
 
 ?>
@@ -12,10 +12,10 @@ $menuItems = array(
 <div id="menu">
     <ul>
         <?php
-        foreach($menuItems as $menuItem){
-            echo '<li><a href="index.php?page='.$menuItem[0].'">'.$menuItem[1].'</a></li>';
+        echo '<li><a href="../index.php">Uitloggen</a></li>';
+        foreach($menuItems as $menuItem) {
+            echo '<li><a href="../php/dashboard.php?page=' . $menuItem[0] . '">' . $menuItem[1] . '</a></li>';
         }
-            echo '<li><a href="php/start.php">Uitloggen</a></li>';
         ?>
     </ul>
 </div>

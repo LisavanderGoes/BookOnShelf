@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "db/connect.php";
+require "../db/connect.php";
 $result = $db->query('SELECT * FROM boeken WHERE id='.$_GET['id']);
 $product = $result->fetch();
 
@@ -31,31 +31,27 @@ if(isset($_GET['id'])) {
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>BoekOnShelf</title>
-    <link rel="icon" href="images/icon.png" />
-    <link href="css/stijl.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../images/icon.png" />
+    <link href="../css/stijl2.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 <div id="container">
 
     <div id="banner">
-        <h1>Lenen</h1>
+        <?php include '../includes/navbar.inc.php'; ?>
+        <img src="../images/icon005.png" alt="Icon" height="55" width="55">
+        <h1><?php echo $item->name ?></h1>
     </div>
-
-    <!-----menu---->
-    <?php include 'Includes/navbar.inc.php'; ?>
 
 
     <!-----page---->
     <div id="content">
 
-        <h3>
-            <?php echo $item->name; ?>
-        </h3>
 
-        <form name="lenen" method="post" action="php/lenen.php?id=<?php echo $product['id']; ?>" >
 
-        <input id="lenen" class="button" type="submit" value="Lenen" name="submit">
+        <form name="lenen" method="post" action="lenen.php?id=<?php echo $product['id']; ?>" >
+
 
 
         <p>
@@ -82,6 +78,8 @@ if(isset($_GET['id'])) {
 
         </p>
         <br />
+            <input id="lenen" class="button" type="submit" value="Lenen" name="submit">
+
         </form>
     </div>
 

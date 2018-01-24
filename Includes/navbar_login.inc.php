@@ -1,7 +1,8 @@
 <?php
 $menuItems = array(
-    array('login', 'Login'),
-    array('registreren', 'Registreren')
+    array('registreren', 'Registreren'),
+    array('login', 'Login')
+
 );
 
 ?>

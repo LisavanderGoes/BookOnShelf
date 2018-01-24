@@ -15,13 +15,13 @@ $row = $result->fetch();
 
     //Login
     if (($username == "" || $password == "") || ($row['username'] != $username && $row['password'] != $password)){
-        header("Location:start.php");
+        header("Location:../index.php");
         exit;
     } else{
         if($row['status'] == 'admin') {
             echo "admin mode coming soon!";
         } else {
-            header("Location:../index.php");
+            header("Location:dashboard.php");
             exit;
         }
     }
