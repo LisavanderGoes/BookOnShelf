@@ -1,5 +1,10 @@
 <?php
 require "../db/config.php";
+//if not logged in redirect to login page
+if(!$user->is_logged_in()){
+    header('Location: ../index.php'); exit();
+}
+
 $result = $db->query('SELECT * FROM boeken WHERE id='.$_GET['id']);
 $product = $result->fetch();
 
