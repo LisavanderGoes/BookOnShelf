@@ -1,5 +1,5 @@
 <?php
-include_once "../db/connect.php";
+require "config.php";
 
 //check if already logged in move to home page
 //if( $user->is_logged_in() ){ header('Location: index.php'); exit(); }
@@ -28,7 +28,7 @@ $row = $result->fetch();
         } else {
             $_SESSION['username'] = $username;
             $_SESSION['loggedin'] = true;
-            header("Location:dashboard.php");
+            header("Location:../index.php?page=home");
             exit;
         }
     }

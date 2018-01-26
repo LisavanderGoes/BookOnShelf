@@ -20,16 +20,17 @@ if (isset($_GET['page'])){
 <body>
 <div id="container">
 
-    <div id="banner">
-        <?php include 'includes/navbar_login.inc.php'; ?>
-        <img src="images/book002.png" alt="Icon" height="55" width="55">
-        <h1><?php echo $page ?></h1>
-    </div>
+
+        <div id="banner">
+            <?php include 'includes/navbar.inc.php'; ?>
+            <img id="imgbanner" src="images/book002.png" alt="Icon" height="55" width="55"><?php echo $page ?>
+        </div>
+
 
 
 <!----page--->
-    <div>
-    <img id="circle" src="images/icon005.png" alt="Icon" height="400" width="400">
+    <div id="content">
+    <!--<img id="circle" src="images/icon005.png" alt="Icon" height="400" width="400">-->
     <?php include 'includes/'.$page.'.inc.php'; ?>
     </div>
 

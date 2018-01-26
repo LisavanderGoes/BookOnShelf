@@ -27,11 +27,7 @@ if(!$user->is_logged_in()){
 <body>
 <div id="container">
 
-    <div id="banner">
-        <?php include '../includes/navbar.inc.php'; ?>
-        <img src="../images/icon005.png" alt="Icon" height="55" width="55">
-        <h1><?php echo $page ?></h1>
-    </div>
+
 
 
 <!-----page----->

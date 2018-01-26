@@ -8,7 +8,7 @@ if(isset($_POST['submit'])){
     $password2 = isset($_POST['2']) ? $_POST['2'] : '';
 
     //Database
-    include_once "../db/connect.php";
+    require "config.php";
 
 
     if(($username == "" || $password == "") || ($password != $password2)){
@@ -19,7 +19,9 @@ if(isset($_POST['submit'])){
         //Exec database
         $db->exec("INSERT INTO users (username, password)
                   VALUES ('$username', '$password')");
-        header("Location:dashboard.php");
+        $_SESSION['username'] = $username;
+        $_SESSION['loggedin'] = true;
+        header("Location:../index.php?page=home");
 
     }
 }

@@ -2,13 +2,13 @@
     <div id="box">
         <p>
     <label>
-        <input type="text" name="username" id="username" placeholder="User Name" value="<?php if(isset($error)){ echo $_POST['username']; } ?>" tabindex="1">
+        <input type="text" name="username" id="username" placeholder="User Name" value="<?php if(isset($error)){ echo $_POST['username']; } ?>" tabindex="1" required>
     </label>
         </p>
         <p>
 
     <label>
-        <input type="password" name="password" id="password" placeholder="Password" tabindex="3">
+        <input type="password" name="password" id="password" placeholder="Password" tabindex="3" required>
     </label>
         </p>
 

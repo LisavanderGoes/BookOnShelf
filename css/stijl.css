@@ -1,47 +1,62 @@
-body {
-    background: url('../images/bieb.jpg')  right top;
-    background-repeat: repeat-y;
-    background-size: 100%;
+/**************************
+*{
+    border: 1px solid red
+}
+****************************/
 
-    margin-top: 20px;
-    margin-bottom: 20px;
-
-    text-align: left;
-    font-family: Verdana;
-    font-size: 15px;
-    color: saddlebrown;
-
+body{
+    background-color: rgb(176, 208, 219);
+    font-family: "Dubai Light";
+    color: black;
 }
 
 #container{
-    width: 755px;
-    margin: auto;
-    background-color: rgba(248, 247, 216, 0.7);
+    padding: 30px;
+    height: 91%;
+
 }
 
-#banner{
-    padding: 15px 15px 0px 15px;
-    text-align: center;
+#content{
+    height: 90%;
+    width: 900px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+#list{
+    padding: 60px;
 }
 
 h1{
-    padding: 10px;
-    color: white;
-    background-color: saddlebrown;
+    font-size: 17px;
+    width: 45%;
+    float: right;
 }
 
-/*menu*/
+h3{
+    width: 800px;
+    margin: auto;
+    color: #999;
+    text-align: center;
+    font-size: 21px;
+}
 
-#menu {
-    background: saddlebrown;
-    height: 25px;
+p{
+    margin: 10px;
+    font-size: 18px;
+}
+
+#menu{
+    width: 700px;
+    float: right;
 }
 
 #menu a {
     margin-left: 20px;
     margin-right: 20px;
-    color: white;
-    font-size: 13px;
+    color: black;
+    font-size: 17px;
     text-decoration: none;
 }
 
@@ -51,62 +66,99 @@ h1{
     padding: 0;
 }
 
-#menu ul li {
-    background: saddlebrown;
-    height: 25px;
+#menu ul li{
     width: auto;
-    float: left;
-
+    float: right;
     text-align: center;
-
-    border-style: none solid none none;
+    border-style: solid;
     border-width: 1px;
-    border-color: white;
+    border-color: black;
 }
 
 #menu ul li:hover {
-    background-color: rosybrown;
+    color: white;
+    background-color: black;
 }
 
-#content{
-    background: transparent;
-    padding: 0px 13px 13px 13px;
+#menu li:hover a {
+    color: white
 }
 
-h3{
-    padding: 4px;
-    color: saddlebrown;
-    text-decoration: underline;
-    font-size: 15px;
-    font-style: italic;
+#account {
+    background-color: black;
+}
+#account a{
+    color: white;
 }
 
-p{
-    color: #666666;
-    text-align: justify;
+
+#login{
+    width: 500px;
+    margin: auto;
+    padding: 50px 50px 50px 50px;
 }
 
-#boek{
-    color: #666666;
-    text-align: justify;
-    text-decoration: none;
+#login input[type=text], select{
+    padding: 12px 20px;
+    margin: 8px 0;
+    width: 100%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
-#footer{
-    background: rosybrown;
-    padding: 13px;
+#login input[type=password], select{
+    padding: 12px 20px;
+    margin: 8px 0;
+    width: 100%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#login input[type=submit] {
+
+    width: 100%;
+    background-color: rgb(239, 228, 179);
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#box{
+    border-radius: 10px;
+    background-color: rgb(123, 158, 18);
+    padding: 70px 20px 50px 20px;
+
+    margin:auto;
+    position: relative;
+
+}
+
+#circle{
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    margin-left:-256px;
 }
 
 #row{
-
-    border-style: none none solid none;
-    border-width: 1.5px;
-    border-color: saddlebrown;
+    background-color: rgba(255, 85, 215, 0.3);
+    border-radius: 10px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
 }
 
-#lenen{
-    float: right;
-    margin: 0px 0px 10px 10px;
+#row a{
+    text-decoration: none;
+    color: black;
 }
 
 

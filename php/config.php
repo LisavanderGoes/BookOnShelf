@@ -26,9 +26,7 @@ catch(PDOException $e)
     echo "Connection failed: " . $e->getMessage();
 }
 
-//include the user class, pass in the database connection
-include('../classes/users.php');
-//include('classes/phpmailer/mail.php');
+include('users.php');
 $user = new User($db);
 
 

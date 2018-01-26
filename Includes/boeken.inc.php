@@ -1,29 +1,56 @@
 <?php
 
+
 $result = $db->query('SELECT * FROM boeken');
 ?>
+<?php
+
+//if not logged in redirect to login page
+if (!$user->is_logged_in()) {
+    header('Location: index.php');
+    exit();
+}
+
+if(!empty($_GET['message'])) {
+$message = $_GET['message'];
+if($message == "success"){
+    echo '<script language="javascript">';
+    echo 'alert("Gelukt! U kunt het boek nu meenemen.")';
+    echo '</script>';
+} else if($message == 'fail'){
+    echo '<script language="javascript">';
+    echo 'alert("Helaas! Dit boek kan niet geleend worden.")';
+    echo '</script>';
+}
+}
+
+?>
+
 
 <div id="list">
     <?php while($product = $result->fetch()){ ?>
-    <div id="row">
 
 
-        <p>
-            <label>
-                <a id="boek" href="../php/boek.php?id=<?php echo $product['id']; ?>">Boek: <b> <?php echo $product['name']?></b></a>
-            </label>
-        </p>
-        <p>
-            <label>
-                Auteur: <?php echo $product['writer']?>
-            </label>
-         <!--      </p>
-        <p>
-            <label>
-                Aantal: <?php echo $product['aantal']?>
-            </label>
-        </p>-->
-    </div>
+        <form role="form" method="post" action="index.php?page=boek&id=<?php echo $product['boekenID']; ?>" autocomplete="off">
+
+            <!--<input type = "hidden" name = "id" value = "<?php echo $product['boekenID']; ?>" />-->
+
+            <button id="row" type="submit" name="submit1">
+                <h1>
+                    <strong><?php echo $product['name']?></strong>
+                </h1>
+                <h2>
+                <?php echo "Auteur: ".$product['writer']?>
+                </h2>
+            </button>
+
+
+        </form>
+
+
+
     <?php } ?>
 </div>
+
+
 
