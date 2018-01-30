@@ -1,4 +1,5 @@
-<?php session_start();
+<?php
+require "config.php";
 
 if(isset($_POST['submit'])){
 
@@ -7,8 +8,9 @@ if(isset($_POST['submit'])){
     $password = isset($_POST['password']) ? $_POST['password'] : '';
     $password2 = isset($_POST['2']) ? $_POST['2'] : '';
 
-    //Database
-    require "config.php";
+    $result = $db->prepare("SELECT * FROM users WHERE username =? AND password =? ");
+    $result->execute(array($username, $password));
+    $row = $result->fetch();
 
 
     if(($username == "" || $password == "") || ($password != $password2)){
@@ -19,7 +21,7 @@ if(isset($_POST['submit'])){
         //Exec database
         $db->exec("INSERT INTO users (username, password)
                   VALUES ('$username', '$password')");
-        $_SESSION['username'] = $username;
+        $_SESSION['userID'] = $row["memberID"];
         $_SESSION['loggedin'] = true;
         header("Location:../index.php?page=home");
 

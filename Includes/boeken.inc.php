@@ -33,7 +33,7 @@ if($message == "success"){
 
         <form role="form" method="post" action="index.php?page=boek&id=<?php echo $product['boekenID']; ?>" autocomplete="off">
 
-            <!--<input type = "hidden" name = "id" value = "<?php echo $product['boekenID']; ?>" />-->
+            <input type = "hidden" name = "id" value = "<?php echo $product['boekenID']; ?>" />
 
             <button id="row" type="submit" name="submit1">
                 <h1>

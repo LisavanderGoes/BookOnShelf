@@ -23,10 +23,12 @@ $row = $result->fetch();
         exit;
     } else{
         if($row['status'] == 'admin') {
-            $_SESSION['username'] = $username;
-            echo "admin mode coming soon!";
+            $_SESSION['userID'] = $row["memberID"];
+            $_SESSION['loggedin'] = true;
+            header("Location:../index.php?page=adminhome");
+            exit;
         } else {
-            $_SESSION['username'] = $username;
+            $_SESSION['userID'] = $row["memberID"];
             $_SESSION['loggedin'] = true;
             header("Location:../index.php?page=home");
             exit;

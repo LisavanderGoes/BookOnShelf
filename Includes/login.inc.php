@@ -15,7 +15,7 @@
 
     <div>
         <div>
-            <a href='reset.php'>Forgot your Password?</a>
+            <a href=''>Forgot your Password?</a>
         </div>
     </div>
 
