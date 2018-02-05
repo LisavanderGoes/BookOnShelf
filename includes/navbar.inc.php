@@ -1,13 +1,20 @@
 <?php
-require "php/config.php";
 
 if($user->is_logged_in()){
 
-    $result = $db->prepare("SELECT * FROM users WHERE memberID =? ");
-    $result->execute(array($_SESSION['userID']));
-    $row = $result->fetch();
+    $userID = $_SESSION['userID'];
 
-    if($row['status'] == 'admin') {
+    $selusers = 'SELECT username, status FROM users WHERE memberID = :ID';
+    $resusers = $db->prepare($selusers);
+    $resusers->bindParam(':ID', $userID, PDO::PARAM_INT);
+    $resusers->execute();
+    $users = $resusers->fetch();
+
+    $status = $users['status'];
+    $account = $users['username'];
+
+
+    if($status == 'admin') {
         $menuItems = array(
             array('ledenbeheer', 'Ledenbeheer'),
             array('boekenbeheer', 'Boekenbeheer'),
@@ -31,8 +38,6 @@ if($user->is_logged_in()){
         <?php
     }else {
 
-        $account = $row['username'];
-
         $menuItems = array(
             array('terugbrengen', 'Terugbrengen'),
             array('boeken', 'Boeken'),
@@ -41,7 +46,6 @@ if($user->is_logged_in()){
 
         ?>
 
-
         <div id="menu">
             <ul>
                 <?php
@@ -49,6 +53,7 @@ if($user->is_logged_in()){
                 echo '<li id="account"><a href="index.php?page=account">' . $account . '</a></li>';
                 foreach ($menuItems as $menuItem) {
                     echo '<li><a href="index.php?page=' . $menuItem[0] . '">' . $menuItem[1] . '</a></li>';
+
                 }
                 ?>
             </ul>

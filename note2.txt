@@ -1,0 +1,24 @@
+van scherm naar php is met action
+van php naar index is met header naar location ?page=...
+$_GET vanaf scherm naar index
+
+get in url
+post onderwater
+sessie blijft bestaan als start session eind session destroyed
+
+
+maak layout voor login en voor hom een zet ze beide in de index
+
+
+php data objects
+prepare => :id
+bind :id $id
+execute
+fetch
+ 
+
+backbutton kan logout omzeilen
+
+
+
+php/lenen.php?id=<?php echo $id; ?>

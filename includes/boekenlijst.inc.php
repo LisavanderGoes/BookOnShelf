@@ -9,7 +9,7 @@ $userID = $_SESSION['userID'];
 
 $i = 1;
 
-$sellenen = 'SELECT boekID, date FROM lenen WHERE userID= :ID ORDER BY boekID DESC LIMIT 5 ';
+$sellenen = 'SELECT boekID, date FROM lenen WHERE userID= :ID ORDER BY boekID DESC';
 $reslenen = $db->prepare($sellenen);
 $reslenen->bindParam(':ID', $userID, PDO::PARAM_INT);
 $reslenen->execute();
@@ -68,45 +68,7 @@ $reslenen->execute();
     }
     ?>
     </table>
-    <a href='index.php?page=boekenlijst'>Meer bekijken</a>
-
-
-
-    <br><b>Gereserveerd:</b> <br>
-    <table>
-    <?php
-
-    $i = 1;
-
-    $selboeken2 = "SELECT boekenID, aantal, name FROM boeken WHERE reserverenID= :ID";
-    $resboeken2 = $db->prepare($selboeken2);
-    $resboeken2->bindParam(':ID', $userID, PDO::PARAM_INT);
-    $resboeken2->execute();
-
-
-
-    while($boeken = $resboeken2->fetch()){
-
-    $boekenID = $boeken['boekenID'];
-    $aantal = $boeken['aantal'];
-    $resname = $boeken['name'];
-    ?>
-
-    <tr class="home">
-        <td id="id"><?php echo $i . "-" ?></td>
-        <td><?php echo $resname ?></td>
-        <td><?php if($aantal > 0){
-                echo '&nbsp&nbsp Kan geleend worden!';
-            }
-            echo '<br>'; ?></td>
-    </tr>
-
-    <?php
-        $i++;
-    }
-    ?>
-    </table>
-</p>
+    <a href='index.php?page=home'>Minder bekijken</a>
 </div>
 
 

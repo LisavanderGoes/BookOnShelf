@@ -1,20 +1,23 @@
 <?php
+
 if (!$user->is_logged_in()) {
     header('Location: index.php');
     exit();
 }
 
-if(!empty($_GET['message'])) {
-    $message = $_GET['message'];
+if(!empty($_SESSION['message'])) {
+    $message = $_SESSION['message'];
     if($message == "success"){
         echo '<script language="javascript">';
-        echo 'alert("Gelukt!")';
+        echo 'if (confirm("Gelukt!")) {
+           }';
         echo '</script>';
     } else if($message == 'fail'){
         echo '<script language="javascript">';
-        echo 'alert("Helaas er is iets misgegeaan!")';
+        echo 'alert("Er is iets foutgegaan!")';
         echo '</script>';
     }
+    unset($_SESSION['message']);
 }
 
 ?>

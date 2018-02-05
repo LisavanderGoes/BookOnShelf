@@ -1,3 +1,11 @@
+<?php
+
+if ($user->is_logged_in()) {
+    $user->logout();
+}
+
+?>
+
 <form id="login" name="login" method="post" action="php/registreren.php">
     <div id="box">
     <p>

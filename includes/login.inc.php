@@ -1,3 +1,11 @@
+<?php
+
+if ($user->is_logged_in()) {
+    $user->logout();
+}
+
+?>
+
 <form id="login" role="form" method="post" action="php/login.php" autocomplete="off">
     <div id="box">
         <p>
@@ -13,11 +21,11 @@
         </p>
 
 
-    <div>
+    <!--<div>
         <div>
-            <a href=''>Forgot your Password?</a>
+            <a href='index.php?page=email'>Forgot your Password?</a>
         </div>
-    </div>
+    </div>-->
 
     <hr>
         <p>

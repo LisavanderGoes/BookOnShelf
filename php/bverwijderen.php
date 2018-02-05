@@ -1,12 +1,16 @@
-<?php
+<?php //checked
 
-require "config.php";
+require "../../xprivate/config.inc.php";
 
         $boekID = $_GET['id'];
+        $table = $_GET['table'];
+        $row = $_GET['row'];
+        $page = $_GET['page'];
 
-        $delete = "DELETE FROM boeken WHERE boekenID= :boekenID LIMIT 1";
+        $delete = "DELETE FROM $table WHERE $row= :ID LIMIT 1";
+
         $del = $db->prepare($delete);
-        $del->bindParam(':boekenID', $boekID, PDO::PARAM_INT);
+        $del->bindParam(':ID', $boekID, PDO::PARAM_INT);
 
 
 
@@ -14,10 +18,10 @@ require "config.php";
 
         try {
             $del->execute();
-            header("Location:../index.php?page=boekenbeheer");
+            header("Location:../index.php?page=$page");
 
 
-        } catch (PDOException $e) {
+        }   catch (PDOException $e) {
 
             echo $del . "<br>" . $e->getMessage();
         }

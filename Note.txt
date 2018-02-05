@@ -135,4 +135,36 @@ if (!empty($product_array)) {
         </div>
     <?php }} ?>
 
+============================================================
+        <p>
+            <label>
+                <a id="boek" href="../php/boek.php?id=<?php echo $product['id']; ?>">Boek: <b> <?php echo $product['name']?></b></a>
+            </label>
+        </p>
+        <p>
+            <label>
+                Auteur: <?php echo $product['writer']?>
+            </label>
 
+
+
+
+php/bedit.php?id='. $product['boekenID']. '
+
+==============================================================
+
+if(isset($_POST['htemail']) && $_POST['htemail'] == "Value"){ //where "Value" is the
+          //same string given in the HTML form, as value attribute the the checkbox input
+  $usehtml = 1;
+}else{
+  $usehtml = 0;
+}
+
+
+===========================================================
+
+$a = array ( 1, 3, 4, 2, 4, 5, 10, 7, 6, 8, 0 );
+rsort($a);
+$largest = array_slice($a, 0, 5);
+==========================================================
+($username == "" || $password == "") || ($user != $username && $pass != $password)

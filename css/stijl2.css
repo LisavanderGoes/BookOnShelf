@@ -17,7 +17,7 @@ body{
 }
 
 #content{
-    height: 90%;
+    height: auto;
     width: 900px;
     margin: auto;
     background-color: rgba(255, 255, 255, 0.3);
@@ -156,6 +156,7 @@ h3{
     cursor: pointer;
 }
 
+
 #box{
     border-radius: 10px;
     background-color: rgb(123, 158, 18);
@@ -188,9 +189,72 @@ h3{
     color: black;
 }
 
-table,th,tr,td{
+.beheer table,th,tr,td{
     border: 1px solid black;
 }
+
+.beheer th{
+    background-color: #999;
+    text-align: left;
+}
+
+table{
+    width: 100%;
+}
+
+.table{
+    padding: 20px;
+}
+
+.beheer tr{
+    background-color: #f1f1;
+}
+
+.beheer tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.beheer tr:hover {
+    background-color: #ddd;
+}
+
+.red{
+    color: red;
+}
+
+.green{
+    color: green;
+}
+
+#id{
+    width: 30px;
+    background-color: transparent;
+}
+
+.text{
+    padding: 20px;
+}
+
+.home td{
+    width: auto;
+    border: none;
+}
+.home th{
+    width: auto;
+    border: none;
+    text-align: left;
+    padding: 5px;
+}
+
+.textbox{
+    height: auto;
+    width: auto;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+
 
 
 

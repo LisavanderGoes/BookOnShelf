@@ -4,6 +4,8 @@ if (isset($_GET['page'])){
 }else {
     $page='login';
 }
+
+require "../xprivate/config.inc.php";
 ?>
 
 <!DOCTYPE html PUBLIC>
@@ -14,7 +16,7 @@ if (isset($_GET['page'])){
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>BookOnShelf</title>
     <link rel="icon" href="images/icon.png" />
-    <link href="css/stijl.css" rel="stylesheet" type="text/css" />
+    <link href="css/stijl2.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
