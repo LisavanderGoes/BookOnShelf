@@ -5,7 +5,7 @@ if (!$user->is_logged_in()) {
     exit();
 }
 
-$selboeken = 'SELECT aantal, name, writer, aantal, beschrijving, gereserveerd FROM boeken';
+$selboeken = 'SELECT boekenID, name, writer, aantal, beschrijving, gereserveerd FROM boeken';
 $resboeken = $db->prepare($selboeken);
 $resboeken->bindParam(':ID', $id, PDO::PARAM_INT);
 $resboeken->execute();

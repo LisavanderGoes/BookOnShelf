@@ -1,4 +1,10 @@
 <?php
+
+if (!$user->is_logged_in()) {
+    header('Location: index.php');
+    exit();
+}
+
 $userID = $_SESSION['userID'];
 
 $selusers = 'SELECT username, status FROM users WHERE memberID = :ID';
@@ -21,7 +27,7 @@ $account = $users['username'];
 
         <form role="form" method="post" action="php/reset.php" autocomplete="off">
 
-            <input type="text" name="ww" id="" placeholder="......" tabindex="1">
+            <input type="password" name="ww" id="" tabindex="1">
             <input type="submit" name="submit" value="Reset" tabindex="5">
 
         </form>

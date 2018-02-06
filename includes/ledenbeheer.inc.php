@@ -8,7 +8,7 @@ if (!$user->is_logged_in()) {
 ?>
 
 <?php
-$result = $db->query('SELECT * FROM users');
+$result = $db->query('SELECT memberID, username, password, status FROM users');
 $i = 0;
 
 ?>
@@ -94,9 +94,10 @@ $i = 0;
 
             $txtusername = $_POST['txtusername'];
             $txtpassword = $_POST['txtpassword'];
+            $txthash = password_hash($txtpassword, PASSWORD_DEFAULT);
 
 
-            $update = "INSERT INTO users (username, password, status) VALUES ('$txtusername','$txtpassword','$txtstatus')";
+            $update = "INSERT INTO users (username, password, status) VALUES ('$txtusername','$txthash','$txtstatus')";
 
             $up = $db->prepare($update);
             $up->execute();
