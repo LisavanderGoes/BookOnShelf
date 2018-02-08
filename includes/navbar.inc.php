@@ -65,7 +65,8 @@ if($user->is_logged_in()){
 
     $menuItems = array(
         array('registreren', 'Registreren'),
-        array('login', 'Login')
+        array('login', 'Login'),
+        array('boeken', 'Boeken')
 
     );
 

@@ -7,7 +7,7 @@ if (!$user->is_logged_in()) {
 
 $userID = $_SESSION['userID'];
 
-$selusers = 'SELECT username, status FROM users WHERE memberID = :ID';
+$selusers = 'SELECT email, username, status FROM users WHERE memberID = :ID';
 $resusers = $db->prepare($selusers);
 $resusers->bindParam(':ID', $userID, PDO::PARAM_INT);
 $resusers->execute();
@@ -15,12 +15,16 @@ $users = $resusers->fetch();
 
 $status = $users['status'];
 $account = $users['username'];
+$email = $users['email'];
 ?>
 
 <div class="text">
     <div class="textbox">
 <p>
     <b>Naam: </b> &nbsp; <?php echo $account ?>
+</p>
+        <p>
+    <b>Email: </b> &nbsp; <?php echo $email ?>
 </p>
     <p>
         <b>Wachtwoord:</b>

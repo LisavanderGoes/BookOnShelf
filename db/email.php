@@ -8,21 +8,22 @@ require "../../xprivate/config.inc.php";
 
         $to = $email;
         $subject = "Wachtwoord vergeten!";
-        $txt = "Nieuw wachtwoord : ". $new;
-        $headers = "From: webmaster@example.com";
+        $txt = "Je wachtwoord is tijdelijk verranderd naar: ". $new . ".\r\nLog is met dit wachtwoord om daar je wachtwoord te resetten.\r\nAls dit niet lukt naar aan de admin.";
+        $headers = "From: jullievandergoof@gmail.com";
 
 
 
 
-        /*$update1 = 'UPDATE users SET password= :PASS WHERE memberID = :ID';
+        $update1 = 'UPDATE users SET password= :PASS WHERE memberID = :ID';
         $up1 = $db->prepare($update1);
         $up1->bindParam(':PASS', $hash, PDO::PARAM_STR);
-        $up1->bindParam(':ID', $userID, PDO::PARAM_INT);*/
+        $up1->bindParam(':ID', $userID, PDO::PARAM_INT);
 
         try {
             mail($to,$subject,$txt,$headers);
             //$up1->execute();
-            echo 'gelukt';
+            $_SESSION['message'] = "success";
+            header("Location:../index.php");
 
 
         }   catch (PDOException $e) {

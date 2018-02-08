@@ -4,6 +4,21 @@ if ($user->is_logged_in()) {
     $user->logout();
 }
 
+if(!empty($_SESSION['message'])) {
+    $message = $_SESSION['message'];
+    if($message == "success"){
+        echo '<script language="javascript">';
+        echo 'if (confirm("Gelukt!")) {
+           }';
+        echo '</script>';
+    } else if($message == 'fail'){
+        echo '<script language="javascript">';
+        echo 'alert("Helaas! Niet gelukt!")';
+        echo '</script>';
+    }
+    unset($_SESSION['message']);
+}
+
 ?>
 
 <form id="login" role="form" method="post" action="php/login.php" autocomplete="off">
@@ -19,13 +34,7 @@ if ($user->is_logged_in()) {
         <input type="password" name="password" id="password" placeholder="Password" tabindex="3" required>
     </label>
         </p>
-
-
-    <!--<div>
-        <div>
-            <a href='index.php?page=email'>Forgot your Password?</a>
-        </div>
-    </div>-->
+        
 
     <hr>
         <p>
